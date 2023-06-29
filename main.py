@@ -12,11 +12,11 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    markup = types.ReplyKeyboardMarkup()
-    markup.add(types.KeyboardButton(
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton(
         lng('open_web_page'),
         web_app=WebAppInfo(
-            url='https://raw.githack.com/andreydmitr20/webapp/3de3161363499ea16b94d14775e14d8ebb619d65/web/index.html')
+            url='https://raw.githack.com/andreydmitr20/webapp/main/web/index.html')
     ))
 
     await message.answer(
