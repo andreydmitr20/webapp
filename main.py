@@ -1,10 +1,9 @@
-from aiogram import Bot, Dispatcher, executor, types
-from aiogram.types.web_app_info import WebAppInfo
-
+from aiogram import Bot, Dispatcher, executor, types  # pylint: disable=import-error
+from aiogram.types.web_app_info import WebAppInfo  # pylint: disable=import-error
 from config import config, l
 from lng import lng, set_lng
 
-set_lng('ru')
+set_lng('en')
 
 bot = Bot(config.bot_token)
 l(config.bot_token)
@@ -18,6 +17,7 @@ async def start(message: types.Message):
         lng('open_web_page'),
         web_app=WebAppInfo(url='https://memenu.me/api/user/test/')
     ))
+
     await message.answer(
         lng('hi'),
         reply_markup=markup
