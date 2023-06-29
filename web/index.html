@@ -56,7 +56,7 @@
       <input type="text" placeholder="телефон" id="user_phone" />
       <button id="order">Оформить</button>
     </form>
-
+    <p id="text"></p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
       let tg = window.Telegram.WebApp;
@@ -65,12 +65,13 @@
       let main = document.querySelector("#main");
       let form = document.querySelector("#form");
       let user_name = document.querySelector("#user_name");
+      let text = document.querySelector("#text");
 
       buy.addEventListener("click", () => {
         main.style.display = "none";
         form.style.display = "block";
 
-        document.title = "1111";
+        text.innerHTML = tg.initDataUnsafe.user.username;
 
         user_name.value =
           tg.initDataUnsafe.user.first_name +
