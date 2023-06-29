@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        color: var(--tg-theme-text-color);
+        background: var(--tg-theme-bg-color);
+      }
+      button {
+        color: var(--tg-theme-button-color);
+        background: var(--tg-theme-button-text-color);
+      }
+      button:hover {
+        background: var(--tg-theme-secondary-bg-color);
+      }
+    </style>
   </head>
   <body>
     <div id="main">
@@ -29,5 +47,7 @@
       </p>
       <button id="buy">Купить</button>
     </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
   </body>
 </html>
