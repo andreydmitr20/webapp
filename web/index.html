@@ -64,12 +64,15 @@
       let order = document.querySelector("#order");
       let main = document.querySelector("#main");
       let form = document.querySelector("#form");
+      let user_email = document.querySelector("#user_email");
       let user_name = document.querySelector("#user_name");
       let text = document.querySelector("#text");
 
       buy.addEventListener("click", () => {
         main.style.display = "none";
         form.style.display = "block";
+
+        user_email.value = "yyyyy";
 
         text.innerHTML = tg.initDataUnsafe.user.username;
 
