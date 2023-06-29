@@ -21,6 +21,9 @@
       button:hover {
         background: var(--tg-theme-secondary-bg-color);
       }
+      form {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -47,7 +50,35 @@
       </p>
       <button id="buy">Купить</button>
     </div>
+    <form id="form">
+      <input type="text" placeholder="имя" id="user_name" />
+      <input type="text" placeholder="email" id="user_email" />
+      <input type="text" placeholder="телефон" id="user_phone" />
+      <button id="order">Оформить</button>
+    </form>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      let tg = window.Telegram.WebApp;
+      let buy = document.querySelector("#buy");
+      let order = document.querySelector("#order");
+      let main = document.querySelector("#main");
+      let form = document.querySelector("#form");
+      let user_name = document.querySelector("#user_name");
+
+      buy.addEventListener("click", () => {
+        main.style.display = "none";
+        form.style.display = "block";
+
+        user_name.value =
+          tg.initDataUnsafe.user.first_name +
+          " " +
+          tg.initDataUnsafe.user.last_name;
+      });
+
+      order.addEventListener("click", () => {
+        tg.close();
+      });
+    </script>
   </body>
 </html>
