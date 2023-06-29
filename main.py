@@ -15,7 +15,8 @@ async def start(message: types.Message):
     markup = types.ReplyKeyboardMarkup()
     markup.add(types.KeyboardButton(
         lng('open_web_page'),
-        web_app=WebAppInfo(url='https://memenu.me/api/user/test/')
+        web_app=WebAppInfo(
+            url='https://raw.githack.com/andreydmitr20/webapp/3de3161363499ea16b94d14775e14d8ebb619d65/web/index.html')
     ))
 
     await message.answer(
